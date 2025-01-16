@@ -1,0 +1,293 @@
+/* General Body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Blue to Black Gradient */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column; /* Ensure the flex container aligns vertically */
+}
+
+/* App container */
+.app-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: flex-start; /* Keep the todo container at the top */
+  align-items: center;
+  width: 100%;
+  height: 95%;
+  padding-top: 10vh;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Todo container */
+.todo-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  margin-top: auto; /* Push the todo list container to the bottom */
+  margin-bottom: 20px; /* Add some space at the bottom */
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Title */
+.app-title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* Clock */
+.clock {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Input container */
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Todo Input */
+.todo-input {
+  width: 80%;
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Add button */
+.add-button {
+  padding: 10px 15px;
+  background-color: #2a5298;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Todo List */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 80vh; /* Limit height to 80% of the viewport height */
+  overflow-y: auto; /* Add vertical scroll when content exceeds 80% height */
+}
+
+/* Todo Item */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.todo-item:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Todo Item Text */
+.todo-text {
+  flex: 1;
+  padding-left: 10px;
+  font-size: 1rem;
+}
+
+/* Completed todo text */
+.completed-text {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Time */
+.todo-time {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-left: 10px;
+}
+
+/* Check Icon */
+.check-icon {
+  cursor: pointer;
+  color: #2a5298;
+  font-size: 1.5rem;
+}
+
+/* Completed Check Icon */
+.completed {
+  color: #28a745;
+}
+
+/* Delete Icon */
+.delete-icon {
+  cursor: pointer;
+  color: #dc3545;
+  font-size: 1.5rem;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Small Devices (Phones) */
+@media (max-width: 600px) {
+  .app-title {
+    font-size: 1.6rem;
+  }
+
+  .todo-container {
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .input-container {
+    flex-direction: column;
+  }
+
+  .todo-input {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .add-button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .todo-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .check-icon {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .todo-text {
+    font-size: 1.1rem;
+  }
+
+  .delete-icon {
+    font-size: 1.3rem;
+    align-self: flex-end;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 1.8rem;
+  }
+
+  .todo-container {
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .input-container {
+    flex-direction: column;
+  }
+
+  .todo-input {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .add-button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .todo-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .check-icon {
+    font-size: 1.4rem;
+  }
+
+  .todo-text {
+    font-size: 1.2rem;
+  }
+
+  .delete-icon {
+    font-size: 1.4rem;
+  }
+}
+
+/* Larger Devices (Desktops) */
+@media (min-width: 769px) {
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .todo-container {
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .input-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .todo-input {
+    width: 75%;
+    margin-right: 10px;
+  }
+
+  .add-button {
+    padding: 12px 20px;
+  }
+
+  .todo-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .check-icon {
+    font-size: 1.5rem;
+  }
+
+  .todo-text {
+    font-size: 1.2rem;
+  }
+
+  .delete-icon {
+    font-size: 1.5rem;
+  }
+}
